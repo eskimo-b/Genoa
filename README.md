@@ -1,4 +1,7 @@
 répartition des tâches : 
-- Création du site web : Jean
-- Gestion authentification JWT : Naël
-- Création du site web : Jean
+    Backend : 
+    - Authentification JWT : Naël
+    - Routes : Naël
+    - Middleware : Naël
+    Frontend:
+    - Création du site web : Jean
