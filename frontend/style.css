@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #111;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  padding: 10px;
+}
+
+.search {
+  padding: 5px;
+  border-radius: 5px;
+}
