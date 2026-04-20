@@ -4,6 +4,8 @@ import Login     from './pages/Login';
 import Register  from './pages/Register';
 import Members   from './pages/Members';
 import Relations from './pages/Relations';
+import Tree      from './pages/Tree';
+import Admin     from './pages/Admin';
 import AuthProvider from './context/AuthContext';
 
 export const NavigationContext = createContext();
@@ -20,6 +22,8 @@ export default function App() {
           {page === 'register'  && <Register />}
           {page === 'members'   && <Members />}
           {page === 'relations' && <Relations />}
+          {page === 'tree'      && <Tree />}
+          {page === 'admin'     && <Admin />}
         </div>
       </NavigationContext.Provider>
     </AuthProvider>

@@ -13,6 +13,7 @@ export default function Header() {
         <button onClick={() => setPage('home')}>Accueil</button>
         <button onClick={() => setPage('members')}>Membres</button>
         <button onClick={() => setPage('relations')}>Relations</button>
+        <button onClick={() => setPage('tree')}>🌳 Arbre</button>
         {user?.role === 'admin' && (
           <button onClick={() => setPage('admin')}>Admin</button>
         )}

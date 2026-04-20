@@ -368,3 +368,157 @@ button { cursor: pointer; border: none; transition: all 0.2s ease; }
 .relation-info strong { display: block; font-size: 0.98rem; }
 .relation-info p { margin: 2px 0; font-size: 0.82rem; color: #666; }
 .empty-msg { text-align: center; color: #aaa; margin: 3rem 0; font-size: 1rem; }
+
+/* ── TREE ──────────────────────────────────────────── */
+.tree-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.filter-group { margin-bottom: 14px; }
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 0 0 6px;
+  letter-spacing: .05em;
+}
+.filter-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #374151;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+.filter-btn:hover:not(:disabled)  { background: #f3f4f6; }
+.filter-btn.active { background: #dcfce7; color: var(--primary-color); font-weight: 600; }
+.filter-btn:disabled { opacity: .4; cursor: not-allowed; }
+
+/* Panneau détail */
+.tree-detail-panel {
+  width: 240px;
+  flex-shrink: 0;
+  background: white;
+  border-left: 1px solid #e5e7eb;
+  padding: 20px 16px;
+  overflow-y: auto;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 50%;
+  width: 26px; height: 26px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex; align-items: center; justify-content: center;
+}
+.close-btn:hover { background: #fee2e2; }
+.detail-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; font-weight: 700;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.detail-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.detail-section { margin-top: 12px; border-top: 1px solid #f3f4f6; padding-top: 8px; }
+.detail-section strong { font-size: 0.78rem; text-transform: uppercase; color: #9ca3af; letter-spacing: .05em; display: block; margin-bottom: 4px; }
+.detail-row { margin: 4px 0; font-size: 0.85rem; color: #374151; }
+.detail-row.link { cursor: pointer; color: var(--primary-color); }
+.detail-row.link:hover { text-decoration: underline; }
+
+/* mode toggle dans Relations */
+.mode-toggle {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 4px;
+}
+.mode-toggle .tab { padding: 6px 16px; font-size: 0.88rem; }
+
+/* ── ADMIN ─────────────────────────────────────────── */
+.admin-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.07);
+  margin-bottom: 1.5rem;
+}
+.admin-section-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: #374151;
+}
+.admin-table { display: flex; flex-direction: column; gap: 8px; }
+.admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #f9fafb;
+  gap: 12px;
+}
+.admin-row.pending { background: #fffbeb; border: 1px solid #fcd34d; }
+.admin-user-info { display: flex; align-items: center; gap: 10px; flex: 1; }
+.admin-email { font-size: 0.9rem; font-weight: 500; color: #111; }
+.admin-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.admin-badge.admin  { background: #fee2e2; color: #dc2626; }
+.admin-badge.editor { background: #dbeafe; color: #2563eb; }
+.admin-badge.reader { background: #f3f4f6; color: #6b7280; }
+.admin-badge.you    { background: #dcfce7; color: #16a34a; }
+.admin-actions { display: flex; align-items: center; gap: 8px; }
+.btn-validate {
+  background: #dcfce7;
+  color: #16a34a;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-validate:hover { background: #bbf7d0; }
+.btn-delete-sm {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-delete-sm:hover { background: #fecaca; }
+.role-select {
+  padding: 5px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: white;
+  cursor: pointer;
+}

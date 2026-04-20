@@ -81,18 +81,12 @@ module.exports = (app, unions, situations, members) => {
                 if (!p || !c)
                     return res.status(404).json({ error: "Membre(s) introuvable(s)" })
 
-                return isAncestor(situations, child, parent)
-                    .then(cycle => {
-                        if (cycle)
-                            return res.status(400).json({ error: "Relation cyclique détectée" })
-
-                        return situations.insertOne({
-                            parent: new ObjectId(parent),
-                            child:  new ObjectId(child),
-                            isBiological
-                        })
-                            .then(command => res.status(201).json({ message: "Lien parent-enfant créé", situationId: command.insertedId }))
-                    })
+                return situations.insertOne({
+                    parent: new ObjectId(parent),
+                    child:  new ObjectId(child),
+                    isBiological
+                })
+                    .then(command => res.status(201).json({ message: "Lien parent-enfant créé", situationId: command.insertedId }))
             })
             .catch(err => res.status(500).json({ error: "Erreur serveur", details: err.message }))
     })
