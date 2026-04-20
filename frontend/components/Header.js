@@ -1,56 +1,27 @@
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { NavigationContext } from '../App';
 
 export default function Header() {
   const { user, setUser } = useContext(AuthContext);
+  const { setPage } = useContext(NavigationContext);
 
   return (
-    <header style={styles.header}>
-      
-      {/* Logo / Index */}
-      <a href="/" style={styles.logo}>Genoa 🌳</a>
+    <header className="main-header">
+      <div className="logo" onClick={() => setPage('home')}>Genoa 🌳</div>
 
-      {/* Barre de recherche */}
-      <input 
-        type="text" 
-        placeholder="Rechercher un membre..." 
-        style={styles.search}
-      />
-
-      {/* Menu */}
-      <nav>
-        <a href="/tree">Arbre</a>
-        <a href="/stats">Stats</a>
-        <a href="/search">Recherche</a>
-
+      <nav className="nav-links">
+        <button onClick={() => setPage('home')}>Accueil</button>
+        <button onClick={() => setPage('tree')}>Arbre</button>
         {user?.role === 'admin' && (
-          <a href="/admin">Admin</a>
+          <button onClick={() => setPage('admin')}>Admin</button>
         )}
       </nav>
 
-      {/* Logout */}
-      <button onClick={() => setUser(null)}>Logout</button>
-
+      <div className="header-right">
+        <span className="user-email">{user?.email}</span>
+        <button className="btn-logout" onClick={() => setUser(null)}>Déconnexion</button>
+      </div>
     </header>
   );
 }
-
-const styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '10px',
-    background: '#222',
-    color: 'white',
-    alignItems: 'center'
-  },
-  logo: {
-    color: 'white',
-    textDecoration: 'none',
-    fontWeight: 'bold'
-  },
-  search: {
-    padding: '5px',
-    borderRadius: '5px'
-  }
-};
